@@ -1,0 +1,242 @@
+{
+  "brand": {
+    "name": "MajaNatura",
+    "tagline": "L'Energy Drink della Natura",
+    "description": "Tisane e infusi naturali 100% etici a base di piante officinali del bacino del Mediterraneo",
+    "target": {
+      "age_range": "18-27",
+      "segment": "Gen Z Attiva",
+      "interests": ["palestra", "crossfit", "padel", "yoga", "benessere"],
+      "values": ["etico", "naturale", "senza zuccheri", "sostenibile"]
+    },
+    "region": "Italia",
+    "mobile_first": true
+  },
+  "colors": {
+    "primary": {
+      "hunter_green": "#355E3B",
+      "sage_green": "#87AE73",
+      "yellow_green": "#C4D59F"
+    },
+    "secondary": {
+      "champagne_mist": "#F0E8D8",
+      "blushed_brick": "#D97B6F"
+    }
+  },
+  "products": [
+    {
+      "id": 1,
+      "category": "Linea Premium",
+      "name": "Zafferano & Camomilla Romana",
+      "description": "Blend premium con zafferano nobile e camomilla romana, perfetto per il relax dopo l'allenamento",
+      "price": 13.50,
+      "currency": "EUR",
+      "sku": "PREM-ZAF-CAM-001",
+      "image": "/images/products/linea-premium-zafferano-camomilla.jpg",
+      "ingredients": ["Zafferano", "Camomilla Romana", "Fiordaliso"],
+      "benefits": ["Rilassamento", "Antinfiammatorio", "Digestivo"],
+      "serving_size": "8-10 bustine",
+      "format": "Bustine filtro",
+      "organic": true,
+      "vegan": true,
+      "sugar_free": true,
+      "featured": true,
+      "rating": 4.8,
+      "reviews": 24
+    },
+    {
+      "id": 2,
+      "category": "Linea Gusti - Cromatico",
+      "name": "Mirtillo dell'Appennino & Lavanda",
+      "description": "Tisana fresca con mirtillo appenninico e lavanda, ideale da bere fredda in borraccia dopo lo sport",
+      "price": 9.50,
+      "currency": "EUR",
+      "sku": "GUST-MIR-LAV-002",
+      "image": "/images/products/linea-gusti-cromatico-mirtillo-lavanda.jpg",
+      "ingredients": ["Mirtillo dell'Appennino", "Lavanda", "Rosa canina"],
+      "benefits": ["Antiossidante", "Antiinfiammatorio", "Rilassante"],
+      "serving_size": "8-10 bustine",
+      "format": "Bustine filtro",
+      "organic": true,
+      "vegan": true,
+      "sugar_free": true,
+      "color": "#6B4C9A",
+      "cold_brew": true,
+      "rating": 4.7,
+      "reviews": 18
+    },
+    {
+      "id": 3,
+      "category": "Linea Gusti - Idratazione Sport",
+      "name": "Bacche di Ginepro & Rosmarino",
+      "description": "Formula energizzante con bacche di ginepro e rosmarino, l'alternativa naturale agli sport drink",
+      "price": 9.00,
+      "currency": "EUR",
+      "sku": "GUST-SPORT-GIN-ROS-003",
+      "image": "/images/products/linea-gusti-sport-ginepro-rosmarino.jpg",
+      "ingredients": ["Bacche di Ginepro", "Rosmarino", "Menta piperita", "Limone"],
+      "benefits": ["Energizzante", "Ricuperante", "Idratante"],
+      "serving_size": "8-10 bustine",
+      "format": "Bustine filtro",
+      "organic": true,
+      "vegan": true,
+      "sugar_free": true,
+      "electrolytes": true,
+      "cold_brew": true,
+      "perfect_for_sports": true,
+      "color": "#00A86B",
+      "rating": 4.9,
+      "reviews": 32
+    },
+    {
+      "id": 4,
+      "category": "Linea Base - Biodiversità",
+      "name": "Finocchietto Selvatico & Melissa",
+      "description": "Blend classico e versatile con finocchietto selvatico e melissa, perfetto per ogni momento della giornata",
+      "price": 6.50,
+      "currency": "EUR",
+      "sku": "BASE-FIN-MEL-004",
+      "image": "/images/products/linea-base-finocchietto-melissa.jpg",
+      "ingredients": ["Finocchietto Selvatico", "Melissa", "Menta"],
+      "benefits": ["Digestivo", "Rilassante", "Rinfrescante"],
+      "serving_size": "8-10 bustine",
+      "format": "Bustine filtro",
+      "organic": true,
+      "vegan": true,
+      "sugar_free": true,
+      "bestseller": true,
+      "rating": 4.6,
+      "reviews": 45
+    },
+    {
+      "id": 5,
+      "category": "Gift Box",
+      "name": "Box Degustazione Nuovi Gusti",
+      "description": "Confezione regalo premium con selezione di 4 nuovi gusti esclusivi, perfetta per scoprire la linea MajaNatura",
+      "price": 38.00,
+      "currency": "EUR",
+      "sku": "GIFT-BOX-DEGUST-005",
+      "image": "/images/products/gift-box-degustazione.jpg",
+      "contents": [
+        "Zafferano & Camomilla Romana (2 bustine)",
+        "Mirtillo dell'Appennino & Lavanda (2 bustine)",
+        "Bacche di Ginepro & Rosmarino (2 bustine)",
+        "Finocchietto Selvatico & Melissa (2 bustine)"
+      ],
+      "format": "Scatola Packaging Premium",
+      "organic": true,
+      "vegan": true,
+      "sugar_free": true,
+      "gift_ready": true,
+      "eco_packaging": true,
+      "ideal_for": ["Regali", "Scoperta", "Sorprese"],
+      "rating": 4.9,
+      "reviews": 28
+    },
+    {
+      "id": 6,
+      "category": "Merchandising",
+      "name": "Borraccia Trasparente + Shopper Eco",
+      "description": "Kit merchandising esclusivo: borraccia trasparente in Tritan (600ml) + shopper in cotone biologico riutilizzabile",
+      "price": 22.00,
+      "currency": "EUR",
+      "sku": "MERCH-BORR-SHOP-006",
+      "image": "/images/products/merchandising-borraccia-shopper.jpg",
+      "contents": [
+        "Borraccia trasparente Tritan 600ml",
+        "Shopper in cotone biologico"
+      ],
+      "format": "Kit Merchandising",
+      "brand_visible": true,
+      "eco_friendly": true,
+      "reusable": true,
+        "perfect_for_cold_brew": true,
+      "ideal_for": ["Allenamento", "Sport", "Lifestyle"],
+      "rating": 4.7,
+      "reviews": 15
+    },
+    {
+      "id": 7,
+      "category": "Limited Edition",
+      "name": "Collaborazioni Speciali",
+      "description": "Tisana esclusiva da collaborazioni speciali con brand e creator selezionati, edizione limitata numerata",
+      "price": 15.00,
+      "currency": "EUR",
+      "sku": "LIMITED-COLLAB-007",
+      "image": "/images/products/limited-edition-collaborazioni.jpg",
+      "format": "Edizione Limitata",
+      "limited_edition": true,
+      "numbered_edition": true,
+      "availability": "Limitata",
+      "exclusive": true,
+      "organic": true,
+      "vegan": true,
+      "sugar_free": true,
+      "collectible": true,
+      "rating": 5.0,
+      "reviews": 8
+    }
+  ],
+  "variants": {
+    "product_lines": [
+      {
+        "line_name": "Linea Premium",
+        "description": "Blend esclusivi con ingredienti nobili",
+        "price_range": "€13.50",
+        "target": "Clientela esigente e raffinata"
+      },
+      {
+        "line_name": "Linea Gusti",
+        "description": "Due varianti: Cromatico (colori naturali) e Idratazione Sport (energizzanti)",
+        "price_range": "€9.00 - €9.50",
+        "target": "Gen Z attiva e sportiva"
+      },
+      {
+        "line_name": "Linea Base",
+        "description": "Classici blend versatili e accessibili",
+        "price_range": "€6.50",
+        "target": "Tutti gli appassionati di benessere"
+      },
+      {
+        "line_name": "Gift Box",
+        "description": "Confezioni regalo premium per occasioni speciali",
+        "price_range": "€38.00",
+        "target": "Regali e sorprese"
+      },
+      {
+        "line_name": "Merchandising",
+        "description": "Accessori eco-friendly con branding MajaNatura",
+        "price_range": "€22.00",
+        "target": "Brand enthusiast e eco-conscious"
+      },
+      {
+        "line_name": "Limited Edition",
+        "description": "Collaborazioni esclusive e edizioni numerate",
+        "price_range": "€15.00",
+        "target": "Collezionisti e fan appassionati"
+      }
+    ]
+  },
+  "serving_suggestions": {
+    "hot": {
+      "water_temp": "75-80°C",
+      "steeping_time": "5-7 minuti",
+      "best_time": "Mattina o dopo pasti",
+      "vessel": "Tazza in ceramica o vetro"
+    },
+    "cold": {
+      "water_temp": "Temperatura ambiente",
+      "steeping_time": "2-4 ore (frigo) o cold brew overnight",
+      "best_time": "Dopo allenamento, durante la giornata",
+      "vessel": "Borraccia trasparente MajaNatura",
+      "ice": "Consigliato"
+    }
+  },
+  "marketing_messages": [
+    "L'Energy Drink della Natura",
+    "100% Etico, Senza Zuccheri",
+    "Dal Mediterraneo al Tuo Allenamento",
+    "Cool, Naturale, Rigenerante",
+    "Tisane per Chi Fa Sport e Sceglie Bene"
+  ]
+}
