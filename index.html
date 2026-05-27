@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MajaNatura - Energy Drink della Natura</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --hunter-green: #355E3B;
+            --sage-green: #87A96B;
+            --yellow-green: #CDDC39;
+            --champagne: #F8E8D8;
+            --blushed-brick: #C8715C;
+            --white: #FFFFFF;
+            --dark-text: #1A1A1A;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--hunter-green), var(--sage-green));
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .cart-badge {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--yellow-green);
+            color: var(--hunter-green);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(180deg, var(--champagne) 0%, var(--white) 100%);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--hunter-green);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--blushed-brick);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .hero-description {
+            color: var(--dark-text);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--hunter-green), var(--sage-green));
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(53, 94, 59, 0.3);
+        }
+
+        /* PRODUCTS SECTION */
+        .products {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--hunter-green);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+            border-color: var(--sage-green);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--champagne), var(--sage-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-line {
+            font-size: 0.75rem;
+            color: var(--sage-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            color: var(--hunter-green);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .product-description {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--blushed-brick);
+            font-weight: 800;
+        }
+
+        .add-cart-btn {
+            background: var(--yellow-green);
+            color: var(--hunter-green);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .add-cart-btn:hover {
+            background: var(--hunter-green);
+            color: var(--yellow-green);
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            background: var(--champagne);
+            padding: 3rem 1rem;
+            margin: 3rem 0;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            color: var(--hunter-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--hunter-green);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--champagne);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* SMOOTH SCROLL */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--yellow-green);
+            color: var(--hunter-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">🌿 MajaNatura</div>
+            <div class="nav-icons">
+                <span>🔍</span>
+                <div class="cart-badge">
+                    <span>🛒</span>
+                    <span class="cart-count">0</span>
+                </div>
+                <span>👤</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Energy Drink della Natura</h1>
+            <p class="hero-tagline">L'alternativa cool, 100% etica e senza zuccheri</p>
+            <p class="hero-description">Tisane e infusi naturali dal bacino del Mediterraneo. Perfetti per chi ama lo sport e il benessere autentico.</p>
+            <button class="cta-button">Scopri la Collezione</button>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🌱</div>
+                <h3>100% Naturale</h3>
+                <p>Erbe officinali del Mediterraneo, senza additivi sintetici</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">♻️</div>
+                <h3>Etico & Sostenibile</h3>
+                <p>Confezioni eco-friendly e responsabilità ambientale</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Energia Naturale</h3>
+                <p>Perfetto per palestra, crossfit, padel e yoga</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💧</div>
+                <h3>Hydration Sport</h3>
+                <p>Bevi freddo dalla tua borraccia trasparente</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products">
+        <h2 class="section-title">I Nostri Prodotti</h2>
+        <div class="products-grid">
+            <!-- PREMIUM LINE -->
+            <div class="product-card">
+                <div class="product-image">🌼</div>
+                <div class="product-info">
+                    <div class="product-line">Linea Premium</div>
+                    <h3 class="product-name">Zafferano & Camomilla</h3>
+                    <p class="product-description">Infuso rilassante con il prestigio dello zafferano e la delicatezza della camomilla romana</p>
+                    <div class="product-footer">
+                        <span class="price">€13,50</span>
+                        <button class="add-cart-btn">Aggiungi</button>
+                    </div>
+                    <div style="text-align: center; margin-top: 0.5rem;">
+                        <span class="badge">Premium Selection</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHROMATIC LINE 1 -->
+            <div class="product-card">
+                <div class="product-image">🫐</div>
+                <div class="product-info">
+                    <div class="product-line">Linea Gusti Cromatico</div>
+                    <h3 class="product-name">Mirtillo & Lavanda</h3>
+                    <p class="product-description">Blend antiossidante con mirtillo dell'Appennino e la serenità della lavanda</p>
+                    <div class="product-footer">
+                        <span class="price">€9,50</span>
+                        <button class="add-cart-btn">Aggiungi</button>
+                    </div>
+                    <div style="text-align: center; margin-top: 0.5rem;">
+                        <span class="badge">Antiossidanti</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPORT HYDRATION LINE -->
+            <div class="product-card">
+                <div class="product-image">🌿</div>
+                <div class="product-info">
+                    <div class="product-line">Linea Gusti Sport</div>
+                    <h3 class="product-name">Bacche di Ginepro & Rosmarino</h3>
+                    <p class="product-description">Energia e idratazione naturale con bacche di ginepro e rosmarino mediterraneo</p>
+                    <div class="product-footer">
+                        <span class="price">€9,00</span>
+                        <button class="add-cart-btn">Aggiungi</button>
+                    </div>
+                    <div style="text-align: center; margin-top: 0.5rem;">
+                        <span class="badge">Sport Hydration</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BASE LINE -->
+            <div class="product-card">
+                <div class="product-image">🌱</div>
+                <div class="product-info">
+                    <div class="product-line">Linea Base Biodiversità</div>
+                    <h3 class="product-name">Finocchietto & Melissa</h3>
+                    <p class="product-description">L'armonia della biodiversità mediterranea con finocchietto selvatico e melissa fresca</p>
+                    <div class="product-footer">
+                        <span class="price">€6,50</span>
+                        <button class="add-cart-btn">Aggiungi</button>
+                    </div>
+                    <div style="text-align: center; margin-top: 0.5rem;">
+                        <span class="badge">Base Selection</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GIFT BOX -->
+            <div class="product-card">
+                <div class="product-image">🎁</div>
+                <div class="product-info">
+                    <div class="product-line">Gift Box</div>
+                    <h3 class="product-name">Box Degustazione</h3>
+                    <p class="product-description">Scopri tutti i nostri nuovi gusti con questa collezione speciale di assaggio</p>
+                    <div class="product-footer">
+                        <span class="price">€38,00</span>
+                        <button class="add-cart-btn">Aggiungi</button>
+                    </div>
+                    <div style="text-align: center; margin-top: 0.5rem;">
+                        <span class="badge">Assortito</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MERCHANDISING -->
+            <div class="product-card">
+                <div class="product-image">♻️</div>
+                <div class="product-info">
+                    <div class="product-line">Merchandising</div>
+                    <h3 class="product-name">Borraccia & Shopper Eco</h3>
+                    <p class="product-description">Kit esclusivo con borraccia trasparente e shopper ecologico per il tuo stile di vita</p>
+                    <div class="product-footer">
+                        <span class="price">€22,00</span>
+                        <button class="add-cart-btn">Aggiungi</button>
+                    </div>
+                    <div style="text-align: center; margin-top: 0.5rem;">
+                        <span class="badge">Eco-Friendly</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIMITED EDITION -->
+            <div class="product-card">
+                <div class="product-image">✨</div>
+                <div class="product-info">
+                    <div class="product-line">Limited Edition</div>
+                    <h3 class="product-name">Collaborazioni Speciali</h3>
+                    <p class="product-description">Edizioni limitate e collaborazioni esclusive con artisti e brand affini</p>
+                    <div class="product-footer">
+                        <span class="price">€15,00</span>
+                        <button class="add-cart-btn">Aggiungi</button>
+                    </div>
+                    <div style="text-align: center; margin-top: 0.5rem;">
+                        <span class="badge">Limited</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#chi-siamo">Chi Siamo</a>
+                <a href="#contatti">Contatti</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#termini">Termini & Condizioni</a>
+                <a href="#sostenibilita">Sostenibilità</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 MajaNatura - Energy Drink della Natura | Spedizione solo in Italia 🇮🇹</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem;">Segui il nostro stile di vita | 🌿 Naturale | ⚡ Energetico | 💚 Etico</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Aggiorna contatore carrello
+        document.querySelectorAll('.add-cart-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const count = document.querySelector('.cart-count');
+                count.textContent = parseInt(count.textContent) + 1;
+                
+                // Animazione
+                this.textContent = '✓ Aggiunto';
+                setTimeout(() => {
+                    this.textContent = 'Aggiungi';
+                }, 1500);
+            });
+        });
+
+        // CTA Button scroll smooth
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            document.querySelector('.products').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
